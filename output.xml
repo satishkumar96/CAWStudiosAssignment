@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.7 on win32)" generated="2024-10-29T19:55:36.126472" rpa="false" schemaversion="5">
+<suite id="s1" name="CAWStudiosAssignment" source="C:\Users\skkum\PycharmProjects\CAWStudiosAssignment">
+<suite id="s1-s1" name="TestRunner" source="C:\Users\skkum\PycharmProjects\CAWStudiosAssignment\TestRunner">
+<suite id="s1-s1-s1" name="RobotAssignment" source="C:\Users\skkum\PycharmProjects\CAWStudiosAssignment\TestRunner\RobotAssignment.robot">
+<test id="s1-s1-s1-t1" name="Test JSON Data In Dynamic Table" line="61">
+<kw name="Load JSON Data">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2024-10-29T19:55:36.595366" level="INFO">${data} = [{'name': 'Bob', 'age': 20, 'gender': 'male'}, {'name': 'George', 'age': 42, 'gender': 'male'}, {'name': 'Sara', 'age': 42, 'gender': 'female'}, {'name': 'Conor', 'age': 40, 'gender': 'male'}, {'name'...</msg>
+<var>${data}</var>
+<arg>${file_path}</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2024-10-29T19:55:36.595366" elapsed="0.001002"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-29T19:55:36.596368" level="INFO">[{'name': 'Bob', 'age': 20, 'gender': 'male'}, {'name': 'George', 'age': 42, 'gender': 'male'}, {'name': 'Sara', 'age': 42, 'gender': 'female'}, {'name': 'Conor', 'age': 40, 'gender': 'male'}, {'name': 'Jennifer', 'age': 42, 'gender': 'female'}]</msg>
+<arg>${data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-29T19:55:36.596368" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-10-29T19:55:36.596368" elapsed="0.000000"/>
+</return>
+<msg time="2024-10-29T19:55:36.597368" level="INFO">${data} = [{'name': 'Bob', 'age': 20, 'gender': 'male'}, {'name': 'George', 'age': 42, 'gender': 'male'}, {'name': 'Sara', 'age': 42, 'gender': 'female'}, {'name': 'Conor', 'age': 40, 'gender': 'male'}, {'name'...</msg>
+<var>${data}</var>
+<arg>${JSON_FILE_PATH}</arg>
+<status status="PASS" start="2024-10-29T19:55:36.593352" elapsed="0.004016"/>
+</kw>
+<kw name="Setup Driver">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:55:36.598368" level="INFO">Opening browser 'Chrome' to base url 'https://testpages.herokuapp.com/styled/tag/dynamic-table.html'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-29T19:55:36.598368" elapsed="37.724840"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-29T19:56:14.324679" elapsed="0.041900"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>${IMPLICIT_WAIT}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-10-29T19:56:14.366579" elapsed="0.007092"/>
+</kw>
+<status status="PASS" start="2024-10-29T19:55:36.597368" elapsed="37.776303"/>
+</kw>
+<kw name="Open URL and Expand Summary">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:14.377175" level="INFO">Clicking element 'tag=summary'.</msg>
+<arg>tag=summary</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:14.375160" elapsed="0.107556"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-29T19:56:19.483366" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-29T19:56:14.482716" elapsed="5.001553"/>
+</kw>
+<status status="PASS" start="2024-10-29T19:56:14.375160" elapsed="5.110104"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-29T19:56:19.487668" level="INFO">${json_data} = [{"name": "Bob", "age": 20, "gender": "male"}, {"name": "George", "age": 42, "gender": "male"}, {"name": "Sara", "age": 42, "gender": "female"}, {"name": "Conor", "age": 40, "gender": "male"}, {"name"...</msg>
+<var>${json_data}</var>
+<arg>json.dumps(${data})</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-29T19:56:19.486263" elapsed="0.001405"/>
+</kw>
+<kw name="Input JSON Data">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>xpath=${TEXT_AREA_XPATH}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:19.489470" elapsed="0.091782"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:19.582264" level="INFO">Typing text '[{"name": "Bob", "age": 20, "gender": "male"}, {"name": "George", "age": 42, "gender": "male"}, {"name": "Sara", "age": 42, "gender": "female"}, {"name": "Conor", "age": 40, "gender": "male"}, {"name": "Jennifer", "age": 42, "gender": "female"}]' into text field 'xpath=//textarea[@id='jsondata']'.</msg>
+<arg>xpath=${TEXT_AREA_XPATH}</arg>
+<arg>${json_data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:19.581252" elapsed="1.103088"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:20.686524" level="INFO">Clicking button 'id=refreshtable'.</msg>
+<arg>id=${REFRESH_BUTTON_ID}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:20.685341" elapsed="0.082119"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-29T19:56:25.769669" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-29T19:56:20.768461" elapsed="5.001208"/>
+</kw>
+<arg>${json_data}</arg>
+<status status="PASS" start="2024-10-29T19:56:19.489470" elapsed="6.280199"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-10-29T19:56:25.771792" level="INFO">${expected_values} = []</msg>
+<var>${expected_values}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.770688" elapsed="0.001104"/>
+</kw>
+<for flavor="IN">
+<iter>
+<for flavor="IN">
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${expected_values}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.774687" elapsed="0.000000"/>
+</kw>
+<var name="${value}">Bob</var>
+<status status="PASS" start="2024-10-29T19:56:25.773687" elapsed="0.001000"/>
+</iter>
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${expected_values}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.774687" elapsed="0.000999"/>
+</kw>
+<var name="${value}">20</var>
+<status status="PASS" start="2024-10-29T19:56:25.774687" elapsed="0.000999"/>
+</iter>
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${expected_values}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.775686" elapsed="0.000000"/>
+</kw>
+<var name="${value}">male</var>
+<status status="PASS" start="2024-10-29T19:56:25.775686" elapsed="0.000000"/>
+</iter>
+<var>${value}</var>
+<value>@{person.values()}</value>
+<status status="PASS" start="2024-10-29T19:56:25.772686" elapsed="0.003000"/>
+</for>
+<var name="${person}">{'name': 'Bob', 'age': 20, 'gender': 'male'}</var>
+<status status="PASS" start="2024-10-29T19:56:25.772686" elapsed="0.003998"/>
+</iter>
+<iter>
+<for flavor="IN">
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${expected_values}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.777684" elapsed="0.000000"/>
+</kw>
+<var name="${value}">George</var>
+<status status="PASS" start="2024-10-29T19:56:25.777684" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${expected_values}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.777684" elapsed="0.001001"/>
+</kw>
+<var name="${value}">42</var>
+<status status="PASS" start="2024-10-29T19:56:25.777684" elapsed="0.001001"/>
+</iter>
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${expected_values}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.778685" elapsed="0.000000"/>
+</kw>
+<var name="${value}">male</var>
+<status status="PASS" start="2024-10-29T19:56:25.778685" elapsed="0.000000"/>
+</iter>
+<var>${value}</var>
+<value>@{person.values()}</value>
+<status status="PASS" start="2024-10-29T19:56:25.776684" elapsed="0.002001"/>
+</for>
+<var name="${person}">{'name': 'George', 'age': 42, 'gender': 'male'}</var>
+<status status="PASS" start="2024-10-29T19:56:25.776684" elapsed="0.002999"/>
+</iter>
+<iter>
+<for flavor="IN">
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${expected_values}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.780684" elapsed="0.000000"/>
+</kw>
+<var name="${value}">Sara</var>
+<status status="PASS" start="2024-10-29T19:56:25.780684" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${expected_values}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.780684" elapsed="0.001000"/>
+</kw>
+<var name="${value}">42</var>
+<status status="PASS" start="2024-10-29T19:56:25.780684" elapsed="0.001000"/>
+</iter>
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${expected_values}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.781684" elapsed="0.000000"/>
+</kw>
+<var name="${value}">female</var>
+<status status="PASS" start="2024-10-29T19:56:25.781684" elapsed="0.000000"/>
+</iter>
+<var>${value}</var>
+<value>@{person.values()}</value>
+<status status="PASS" start="2024-10-29T19:56:25.779683" elapsed="0.002001"/>
+</for>
+<var name="${person}">{'name': 'Sara', 'age': 42, 'gender': 'female'}</var>
+<status status="PASS" start="2024-10-29T19:56:25.779683" elapsed="0.002001"/>
+</iter>
+<iter>
+<for flavor="IN">
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${expected_values}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.782683" elapsed="0.001001"/>
+</kw>
+<var name="${value}">Conor</var>
+<status status="PASS" start="2024-10-29T19:56:25.782683" elapsed="0.001001"/>
+</iter>
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${expected_values}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.783684" elapsed="0.000000"/>
+</kw>
+<var name="${value}">40</var>
+<status status="PASS" start="2024-10-29T19:56:25.783684" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${expected_values}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.784683" elapsed="0.000000"/>
+</kw>
+<var name="${value}">male</var>
+<status status="PASS" start="2024-10-29T19:56:25.784683" elapsed="0.000000"/>
+</iter>
+<var>${value}</var>
+<value>@{person.values()}</value>
+<status status="PASS" start="2024-10-29T19:56:25.782683" elapsed="0.002000"/>
+</for>
+<var name="${person}">{'name': 'Conor', 'age': 40, 'gender': 'male'}</var>
+<status status="PASS" start="2024-10-29T19:56:25.782683" elapsed="0.002000"/>
+</iter>
+<iter>
+<for flavor="IN">
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${expected_values}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.786684" elapsed="0.000000"/>
+</kw>
+<var name="${value}">Jennifer</var>
+<status status="PASS" start="2024-10-29T19:56:25.786684" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${expected_values}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.786684" elapsed="0.001003"/>
+</kw>
+<var name="${value}">42</var>
+<status status="PASS" start="2024-10-29T19:56:25.786684" elapsed="0.001003"/>
+</iter>
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${expected_values}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.787687" elapsed="0.001050"/>
+</kw>
+<var name="${value}">female</var>
+<status status="PASS" start="2024-10-29T19:56:25.787687" elapsed="0.001050"/>
+</iter>
+<var>${value}</var>
+<value>@{person.values()}</value>
+<status status="PASS" start="2024-10-29T19:56:25.785684" elapsed="0.003053"/>
+</for>
+<var name="${person}">{'name': 'Jennifer', 'age': 42, 'gender': 'female'}</var>
+<status status="PASS" start="2024-10-29T19:56:25.785684" elapsed="0.003053"/>
+</iter>
+<var>${person}</var>
+<value>@{data}</value>
+<status status="PASS" start="2024-10-29T19:56:25.772686" elapsed="0.016051"/>
+</for>
+<kw name="Assert Table Data">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:25.813250" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="6b2d139fe42b3c2a175d162b7f46b9e8", element="f.8066AEEE4CFBF0C038B841F19BD61381.d.DDAC7A4C090930E296EC566ABA4FA6A5.e.165")&gt;, &lt;selenium.webdri...</msg>
+<var>${elements}</var>
+<arg>xpath=${DYNAMIC_TABLE_XPATH}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.790831" elapsed="0.022419"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-10-29T19:56:25.813250" level="INFO">${actual_values} = []</msg>
+<var>${actual_values}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.813250" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:25.840573" level="INFO">${text} = Bob</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.814248" elapsed="0.026325"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-10-29T19:56:25.841574" level="INFO">${text} = Bob</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.841574" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_values}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.842575" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6b2d139fe42b3c2a175d162b7f46b9e8", element="f.8066AEEE4CFBF0C038B841F19BD61381.d.DDAC7A4C090930E296EC566ABA4FA6A5.e.165")&gt;</var>
+<status status="PASS" start="2024-10-29T19:56:25.814248" elapsed="0.028327"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:25.858996" level="INFO">${text} = 20</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.842575" elapsed="0.016421"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-10-29T19:56:25.860094" level="INFO">${text} = 20</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.860094" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_values}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.860094" elapsed="0.001002"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6b2d139fe42b3c2a175d162b7f46b9e8", element="f.8066AEEE4CFBF0C038B841F19BD61381.d.DDAC7A4C090930E296EC566ABA4FA6A5.e.166")&gt;</var>
+<status status="PASS" start="2024-10-29T19:56:25.842575" elapsed="0.018521"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:25.879627" level="INFO">${text} = male</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.861096" elapsed="0.018531"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-10-29T19:56:25.880740" level="INFO">${text} = male</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.879627" elapsed="0.001113"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_values}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.880740" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6b2d139fe42b3c2a175d162b7f46b9e8", element="f.8066AEEE4CFBF0C038B841F19BD61381.d.DDAC7A4C090930E296EC566ABA4FA6A5.e.167")&gt;</var>
+<status status="PASS" start="2024-10-29T19:56:25.861096" elapsed="0.019644"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:25.898924" level="INFO">${text} = George</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.881893" elapsed="0.017031"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-10-29T19:56:25.898924" level="INFO">${text} = George</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.898924" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_values}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.898924" elapsed="0.001002"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6b2d139fe42b3c2a175d162b7f46b9e8", element="f.8066AEEE4CFBF0C038B841F19BD61381.d.DDAC7A4C090930E296EC566ABA4FA6A5.e.169")&gt;</var>
+<status status="PASS" start="2024-10-29T19:56:25.881893" elapsed="0.018033"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:25.913527" level="INFO">${text} = 42</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.899926" elapsed="0.013601"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-10-29T19:56:25.913527" level="INFO">${text} = 42</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.913527" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_values}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.914526" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6b2d139fe42b3c2a175d162b7f46b9e8", element="f.8066AEEE4CFBF0C038B841F19BD61381.d.DDAC7A4C090930E296EC566ABA4FA6A5.e.170")&gt;</var>
+<status status="PASS" start="2024-10-29T19:56:25.899926" elapsed="0.014600"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:25.930525" level="INFO">${text} = male</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.914526" elapsed="0.015999"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-10-29T19:56:25.930525" level="INFO">${text} = male</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.930525" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_values}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.930525" elapsed="0.001003"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6b2d139fe42b3c2a175d162b7f46b9e8", element="f.8066AEEE4CFBF0C038B841F19BD61381.d.DDAC7A4C090930E296EC566ABA4FA6A5.e.171")&gt;</var>
+<status status="PASS" start="2024-10-29T19:56:25.914526" elapsed="0.017002"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:25.947164" level="INFO">${text} = Sara</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.931528" elapsed="0.016648"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-10-29T19:56:25.948176" level="INFO">${text} = Sara</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.948176" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_values}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.948176" elapsed="0.001001"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6b2d139fe42b3c2a175d162b7f46b9e8", element="f.8066AEEE4CFBF0C038B841F19BD61381.d.DDAC7A4C090930E296EC566ABA4FA6A5.e.173")&gt;</var>
+<status status="PASS" start="2024-10-29T19:56:25.931528" elapsed="0.017649"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:25.964563" level="INFO">${text} = 42</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.949177" elapsed="0.015386"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-10-29T19:56:25.964563" level="INFO">${text} = 42</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.964563" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_values}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.964563" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6b2d139fe42b3c2a175d162b7f46b9e8", element="f.8066AEEE4CFBF0C038B841F19BD61381.d.DDAC7A4C090930E296EC566ABA4FA6A5.e.174")&gt;</var>
+<status status="PASS" start="2024-10-29T19:56:25.949177" elapsed="0.016729"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:25.979701" level="INFO">${text} = female</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.965906" elapsed="0.014795"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-10-29T19:56:25.980701" level="INFO">${text} = female</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.980701" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_values}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.981700" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6b2d139fe42b3c2a175d162b7f46b9e8", element="f.8066AEEE4CFBF0C038B841F19BD61381.d.DDAC7A4C090930E296EC566ABA4FA6A5.e.175")&gt;</var>
+<status status="PASS" start="2024-10-29T19:56:25.965906" elapsed="0.015794"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:25.995036" level="INFO">${text} = Conor</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.981700" elapsed="0.013336"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-10-29T19:56:25.996039" level="INFO">${text} = Conor</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.996039" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_values}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.996039" elapsed="0.001011"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6b2d139fe42b3c2a175d162b7f46b9e8", element="f.8066AEEE4CFBF0C038B841F19BD61381.d.DDAC7A4C090930E296EC566ABA4FA6A5.e.177")&gt;</var>
+<status status="PASS" start="2024-10-29T19:56:25.981700" elapsed="0.015350"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:26.010690" level="INFO">${text} = 40</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:25.997050" elapsed="0.013640"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-10-29T19:56:26.011700" level="INFO">${text} = 40</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.010690" elapsed="0.001010"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_values}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.011700" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6b2d139fe42b3c2a175d162b7f46b9e8", element="f.8066AEEE4CFBF0C038B841F19BD61381.d.DDAC7A4C090930E296EC566ABA4FA6A5.e.178")&gt;</var>
+<status status="PASS" start="2024-10-29T19:56:25.997050" elapsed="0.014650"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:26.022761" level="INFO">${text} = male</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.012693" elapsed="0.010068"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-10-29T19:56:26.023762" level="INFO">${text} = male</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.022761" elapsed="0.001001"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_values}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.023762" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6b2d139fe42b3c2a175d162b7f46b9e8", element="f.8066AEEE4CFBF0C038B841F19BD61381.d.DDAC7A4C090930E296EC566ABA4FA6A5.e.179")&gt;</var>
+<status status="PASS" start="2024-10-29T19:56:26.012693" elapsed="0.011069"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:26.035027" level="INFO">${text} = Jennifer</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.023762" elapsed="0.011265"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-10-29T19:56:26.036046" level="INFO">${text} = Jennifer</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.036046" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_values}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.036046" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6b2d139fe42b3c2a175d162b7f46b9e8", element="f.8066AEEE4CFBF0C038B841F19BD61381.d.DDAC7A4C090930E296EC566ABA4FA6A5.e.181")&gt;</var>
+<status status="PASS" start="2024-10-29T19:56:26.023762" elapsed="0.012284"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:26.047454" level="INFO">${text} = 42</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.037434" elapsed="0.010020"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-10-29T19:56:26.048881" level="INFO">${text} = 42</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.047454" elapsed="0.001427"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_values}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.048881" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6b2d139fe42b3c2a175d162b7f46b9e8", element="f.8066AEEE4CFBF0C038B841F19BD61381.d.DDAC7A4C090930E296EC566ABA4FA6A5.e.182")&gt;</var>
+<status status="PASS" start="2024-10-29T19:56:26.036046" elapsed="0.012835"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T19:56:26.059583" level="INFO">${text} = female</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.048881" elapsed="0.010702"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-10-29T19:56:26.060599" level="INFO">${text} = female</msg>
+<var>${text}</var>
+<arg>${text}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.059583" elapsed="0.001016"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${actual_values}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.060599" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6b2d139fe42b3c2a175d162b7f46b9e8", element="f.8066AEEE4CFBF0C038B841F19BD61381.d.DDAC7A4C090930E296EC566ABA4FA6A5.e.183")&gt;</var>
+<status status="PASS" start="2024-10-29T19:56:26.048881" elapsed="0.012718"/>
+</iter>
+<var>${element}</var>
+<value>@{elements}</value>
+<status status="PASS" start="2024-10-29T19:56:25.813250" elapsed="0.248349"/>
+</for>
+<kw name="Length Should Be" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.062756" level="INFO">Length is 15.</msg>
+<arg>${actual_values}</arg>
+<arg>${expected_values.__len__()}</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.061599" elapsed="0.001157"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_values[${i}]}</arg>
+<arg>${expected_values[${i}]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.063770" elapsed="0.001624"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.065394" level="INFO">Matched value: Bob</msg>
+<arg>Matched value: ${actual_values[${i}]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.065394" elapsed="0.001350"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-10-29T19:56:26.063770" elapsed="0.002974"/>
+</iter>
+<iter>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.067759" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${actual_values[${i}]}</arg>
+<arg>${expected_values[${i}]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.066744" elapsed="0.001015"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.069081" level="INFO">Matched value: 20</msg>
+<arg>Matched value: ${actual_values[${i}]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.067759" elapsed="0.001322"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-10-29T19:56:26.066744" elapsed="0.002337"/>
+</iter>
+<iter>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_values[${i}]}</arg>
+<arg>${expected_values[${i}]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.070091" elapsed="0.001001"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.072124" level="INFO">Matched value: male</msg>
+<arg>Matched value: ${actual_values[${i}]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.072124" elapsed="0.000000"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-10-29T19:56:26.070091" elapsed="0.002033"/>
+</iter>
+<iter>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_values[${i}]}</arg>
+<arg>${expected_values[${i}]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.073107" elapsed="0.000998"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.075105" level="INFO">Matched value: George</msg>
+<arg>Matched value: ${actual_values[${i}]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.074105" elapsed="0.001000"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2024-10-29T19:56:26.073107" elapsed="0.001998"/>
+</iter>
+<iter>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.077105" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${actual_values[${i}]}</arg>
+<arg>${expected_values[${i}]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.076105" elapsed="0.001000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.078105" level="INFO">Matched value: 42</msg>
+<arg>Matched value: ${actual_values[${i}]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.077105" elapsed="0.001000"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2024-10-29T19:56:26.076105" elapsed="0.002000"/>
+</iter>
+<iter>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_values[${i}]}</arg>
+<arg>${expected_values[${i}]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.079105" elapsed="0.001000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.083105" level="INFO">Matched value: male</msg>
+<arg>Matched value: ${actual_values[${i}]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.080105" elapsed="0.003000"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2024-10-29T19:56:26.078105" elapsed="0.005000"/>
+</iter>
+<iter>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_values[${i}]}</arg>
+<arg>${expected_values[${i}]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.083105" elapsed="0.002001"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.086266" level="INFO">Matched value: Sara</msg>
+<arg>Matched value: ${actual_values[${i}]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.085106" elapsed="0.001160"/>
+</kw>
+<var name="${i}">6</var>
+<status status="PASS" start="2024-10-29T19:56:26.083105" elapsed="0.003161"/>
+</iter>
+<iter>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.088301" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${actual_values[${i}]}</arg>
+<arg>${expected_values[${i}]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.086266" elapsed="0.002035"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.089331" level="INFO">Matched value: 42</msg>
+<arg>Matched value: ${actual_values[${i}]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.088301" elapsed="0.001030"/>
+</kw>
+<var name="${i}">7</var>
+<status status="PASS" start="2024-10-29T19:56:26.086266" elapsed="0.003065"/>
+</iter>
+<iter>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_values[${i}]}</arg>
+<arg>${expected_values[${i}]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.090324" elapsed="0.000999"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.092323" level="INFO">Matched value: female</msg>
+<arg>Matched value: ${actual_values[${i}]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.091323" elapsed="0.001000"/>
+</kw>
+<var name="${i}">8</var>
+<status status="PASS" start="2024-10-29T19:56:26.089331" elapsed="0.002992"/>
+</iter>
+<iter>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_values[${i}]}</arg>
+<arg>${expected_values[${i}]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.093324" elapsed="0.001000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.095323" level="INFO">Matched value: Conor</msg>
+<arg>Matched value: ${actual_values[${i}]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.094324" elapsed="0.000999"/>
+</kw>
+<var name="${i}">9</var>
+<status status="PASS" start="2024-10-29T19:56:26.092323" elapsed="0.003000"/>
+</iter>
+<iter>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.097323" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${actual_values[${i}]}</arg>
+<arg>${expected_values[${i}]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.096324" elapsed="0.000999"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.098323" level="INFO">Matched value: 40</msg>
+<arg>Matched value: ${actual_values[${i}]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.097323" elapsed="0.001000"/>
+</kw>
+<var name="${i}">10</var>
+<status status="PASS" start="2024-10-29T19:56:26.095323" elapsed="0.003000"/>
+</iter>
+<iter>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_values[${i}]}</arg>
+<arg>${expected_values[${i}]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.099329" elapsed="0.000996"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.101324" level="INFO">Matched value: male</msg>
+<arg>Matched value: ${actual_values[${i}]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.100325" elapsed="0.000999"/>
+</kw>
+<var name="${i}">11</var>
+<status status="PASS" start="2024-10-29T19:56:26.098323" elapsed="0.004441"/>
+</iter>
+<iter>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_values[${i}]}</arg>
+<arg>${expected_values[${i}]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.103270" elapsed="0.001005"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.105294" level="INFO">Matched value: Jennifer</msg>
+<arg>Matched value: ${actual_values[${i}]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.104275" elapsed="0.001019"/>
+</kw>
+<var name="${i}">12</var>
+<status status="PASS" start="2024-10-29T19:56:26.102764" elapsed="0.002530"/>
+</iter>
+<iter>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.107292" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${actual_values[${i}]}</arg>
+<arg>${expected_values[${i}]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.106292" elapsed="0.001000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.108292" level="INFO">Matched value: 42</msg>
+<arg>Matched value: ${actual_values[${i}]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.107292" elapsed="0.001000"/>
+</kw>
+<var name="${i}">13</var>
+<status status="PASS" start="2024-10-29T19:56:26.105294" elapsed="0.002998"/>
+</iter>
+<iter>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_values[${i}]}</arg>
+<arg>${expected_values[${i}]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.109291" elapsed="0.001000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-29T19:56:26.111291" level="INFO">Matched value: female</msg>
+<arg>Matched value: ${actual_values[${i}]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.110291" elapsed="0.001000"/>
+</kw>
+<var name="${i}">14</var>
+<status status="PASS" start="2024-10-29T19:56:26.108292" elapsed="0.002999"/>
+</iter>
+<var>${i}</var>
+<value>${expected_values.__len__()}</value>
+<status status="PASS" start="2024-10-29T19:56:26.062756" elapsed="0.048535"/>
+</for>
+<arg>${expected_values}</arg>
+<status status="PASS" start="2024-10-29T19:56:25.789809" elapsed="0.321482"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-29T19:56:26.112375" elapsed="2.328987"/>
+</kw>
+<status status="PASS" start="2024-10-29T19:55:36.592251" elapsed="51.850966"/>
+</test>
+<status status="PASS" start="2024-10-29T19:55:36.177752" elapsed="52.268462"/>
+</suite>
+<status status="PASS" start="2024-10-29T19:55:36.175636" elapsed="52.274580"/>
+</suite>
+<status status="PASS" start="2024-10-29T19:55:36.129459" elapsed="52.323254"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="CAWStudiosAssignment">CAWStudiosAssignment</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="TestRunner">CAWStudiosAssignment.TestRunner</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="RobotAssignment">CAWStudiosAssignment.TestRunner.RobotAssignment</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-10-29T19:55:36.100540" level="WARN">Error in file 'C:\Users\skkum\PycharmProjects\CAWStudiosAssignment\TestRunner\RobotAssignment.robot' on line 23: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>
